@@ -623,7 +623,7 @@ TO.  Instead an empty string is returned."
      "  :PROPERTIES:\n"
      (when loc "  :LOCATION: ") loc (when loc "\n")
      "  :LINK: ""[[" link "][Go to gcal web page]]\n"
-     "  :HANGOUTS: ""[[" meet "][Join Hangouts Meet]]\n"
+     (when meet "  :HANGOUTS: ") "[[" meet "][Join Hangouts Meet]]" (when meet "\n")
      "  :ID: " id "\n"
      "  :END:\n"
      (if (or (string= start end) (org-gcal--alldayp start end))
